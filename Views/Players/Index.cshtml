@@ -1,0 +1,108 @@
+﻿@model IEnumerable<FrisbeeApplication.Core.Entities.Player>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JerseyNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Overall)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsHandle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasDisc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThrowAbility)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameGoals)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeasonGoals)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GameAssists)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeasonAssists)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CutAbility)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamNameAndMascot)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JerseyNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Overall)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsHandle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasDisc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThrowAbility)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameGoals)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeasonGoals)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameAssists)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeasonAssists)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CutAbility)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeamNameAndMascot)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
